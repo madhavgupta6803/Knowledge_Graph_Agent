@@ -1,0 +1,37 @@
+{
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "tp": 8,
+  "fp": 0,
+  "fn": 0,
+  "field_scores": {
+    "document_type": {
+      "precision": 0.8125,
+      "recall": 0.8125,
+      "f1": 0.8125
+    },
+    "title": {
+      "precision": 0.9375,
+      "recall": 0.9375,
+      "f1": 0.9375
+    },
+    "circular_number": {
+      "precision": 0.6875,
+      "recall": 0.6875,
+      "f1": 0.6875
+    },
+    "date": {
+      "precision": 0.6875,
+      "recall": 0.6875,
+      "f1": 0.6875
+    },
+    "clause": {
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5
+    }
+  },
+  "false_positives": [],
+  "false_negatives": []
+}

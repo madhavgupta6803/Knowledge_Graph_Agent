@@ -181,9 +181,9 @@ from pathlib import Path
 
 # Note: Ensure these local modules exist in your directory
 try:
-    from pdf_parser import extract_pages
-    from reference_extractor import extract_references_from_page, deduplicate_references
-    from knowledge_graph import build_graph, export_json, export_graphml, export_mermaid
+    from agent.pdf_parser import extract_pages
+    from agent.reference_extractor import extract_references_from_page, deduplicate_references
+    from agent.knowledge_graph import build_graph, export_json, export_graphml, export_mermaid
 except ImportError as e:
     sys.exit(f"Missing local module: {e}")
 
@@ -273,6 +273,12 @@ def run(pdf_path: str, provider: str, output_dir: str, verbose: bool, skip_graph
             print(f"{len(refs)} ref(s) found.")
 
     print(f"        Raw references extracted: {len(all_raw_refs)}")
+    print("        Running verification pass for Master Circular clauses ...")
+    from agent.reference_extractor import verify_master_circular_clauses
+    extra = verify_master_circular_clauses(pages, client, provider=provider)
+    if extra:
+        print(f"        Verification pass found {len(extra)} additional clause ref(s).")
+        all_raw_refs.extend(extra)
 
     # ── Step 3: Deduplicate ─────────────────────────────────────
     print("\n[ 3/4 ] Deduplicating and structuring …")
@@ -283,17 +289,17 @@ def run(pdf_path: str, provider: str, output_dir: str, verbose: bool, skip_graph
     print("\n[ 4/4 ] Building knowledge graph and exporting …")
     G = build_graph(metadata, references)
 
-    json_path = output_dir / f"{stem}_references.json"
+    json_path = output_dir / f"{stem}_references_v2.json"
     export_json(G, metadata, references, str(json_path))
     print(f"        ✓ JSON    → {json_path}")
 
     if not skip_graphml:
-        gml_path = output_dir / f"{stem}_graph.graphml"
+        gml_path = output_dir / f"{stem}_graph_v2.graphml"
         export_graphml(G, str(gml_path))
         print(f"        ✓ GraphML → {gml_path}")
 
     if not skip_mermaid:
-        mmd_path = output_dir / f"{stem}_diagram.mmd"
+        mmd_path = output_dir / f"{stem}_diagram_v2.mmd"
         export_mermaid(G, str(mmd_path) if hasattr(G, 'nodes') else None)
         print(f"        ✓ Mermaid → {mmd_path}")
 

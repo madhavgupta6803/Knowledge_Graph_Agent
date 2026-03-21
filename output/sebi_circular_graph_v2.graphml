@@ -20,7 +20,7 @@
       <data key="d0">SEBI (Mutual Funds) Regulations, 2026</data>
       <data key="d1">LAD-NRO/GN/2026/294</data>
       <data key="d2">January 14, 2026</data>
-      <data key="d3">regulation</data>
+      <data key="d3">notification</data>
       <data key="d4">False</data>
     </node>
     <node id="SEBI (Mutual Funds) Regulations, 2026">
@@ -38,15 +38,8 @@
       <data key="d4">False</data>
     </node>
     <node id="HO/47/11/11(3)2025-MRD-POD2/I/2765/2026">
-      <data key="d0">SEBI Circular</data>
+      <data key="d0">Introduction of Closing Auction Session</data>
       <data key="d1">HO/47/11/11(3)2025-MRD-POD2/I/2765/2026</data>
-      <data key="d2">January 16, 2026</data>
-      <data key="d3">circular</data>
-      <data key="d4">False</data>
-    </node>
-    <node id="SEBI circular">
-      <data key="d0">SEBI circular</data>
-      <data key="d1" />
       <data key="d2">January 16, 2026</data>
       <data key="d3">circular</data>
       <data key="d4">False</data>
@@ -68,27 +61,22 @@
     <edge source="(Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for" target="LAD-NRO/GN/2026/294">
       <data key="d5">Regulation 42(1)</data>
       <data key="d6">Permits mutual funds to borrow funds for specific purposes and sets limits on borrowings.</data>
-      <data key="d7">[1]</data>
+      <data key="d7">[1, 2]</data>
     </edge>
     <edge source="(Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for" target="SEBI (Mutual Funds) Regulations, 2026">
       <data key="d5">clauses 6 and 7 of Fourth Schedule</data>
-      <data key="d6">AMCs shall ensure compliance of clauses 6 and 7 of Fourth Schedule of SEBI (Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for Mutual Funds dated June 27, 2024.</data>
+      <data key="d6">Compliance with specific clauses of the SEBI (Mutual Funds) Regulations, 2026.</data>
       <data key="d7">[2]</data>
     </edge>
     <edge source="(Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for" target="SEBI Master Circular for Mutual Funds">
-      <data key="d5">para 16.8</data>
-      <data key="d6">AMCs shall ensure compliance of clauses 6 and 7 of Fourth Schedule of SEBI (Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for Mutual Funds dated June 27, 2024.</data>
+      <data key="d5">para 10.9</data>
+      <data key="d6">Cost of intraday borrowing and responsibility for losses or costs due to unforeseen events.</data>
       <data key="d7">[2]</data>
     </edge>
     <edge source="(Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for" target="HO/47/11/11(3)2025-MRD-POD2/I/2765/2026">
       <data key="d5" />
-      <data key="d6">SEBI has introduced Closing Auction Session in the equity cash segment of the Stock Exchanges vide circular reference no. HO/47/11/11(3)2025-MRD-POD2/I/2765/2026 dated January 16, 2026, effective from August 03, 2026.</data>
-      <data key="d7">[2]</data>
-    </edge>
-    <edge source="(Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for" target="SEBI circular">
-      <data key="d5" />
-      <data key="d6">the equity cash segment of the Stock Exchanges with effect from the date of applicability of the aforesaid SEBI circular dated January 16, 2026 and in the manner specified therein.</data>
-      <data key="d7">[3]</data>
+      <data key="d6">Introduction of the Closing Auction Session in the equity cash segment of the Stock Exchanges.</data>
+      <data key="d7">[2, 3]</data>
     </edge>
     <edge source="(Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for" target="Securities and Exchange Board of India Act, 1992">
       <data key="d5">Section 11 (1)</data>

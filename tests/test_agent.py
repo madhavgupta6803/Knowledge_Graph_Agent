@@ -108,10 +108,18 @@ class TestEvaluator:
 
 class TestNormHelpers:
     def test_norm_strips_special_chars(self):
-        assert _norm("SEBI/HO/2020") == "sebiho2020"
+        # _norm keeps / because circular numbers need it
+        assert _norm("SEBI/HO/2020") == "sebi/ho/2020"
+        assert _norm("  Section 11(1) ") == "section111"
 
     def test_title_match_substring(self):
-        assert _title_match("SEBI Act 1992", "Securities and Exchange Board of India Act, 1992")
+        # Close paraphrase — high token overlap
+        assert _title_match(
+            "SEBI Mutual Funds Regulations 2026",
+            "SEBI (Mutual Funds) Regulations, 2026"
+        )
+        # Very different wording — should NOT match
+        assert not _title_match("SEBI Act", "Securities and Exchange Board of India Act, 1992")
 
     def test_circnum_match(self):
         assert _circnum_match("SEBI/HO/CFD/DIL1/CIR/P/2019/62", "sebi/ho/cfd/dil1/cir/p/2019/62")

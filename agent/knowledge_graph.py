@@ -17,8 +17,8 @@ from typing import List, Dict, Optional
 
 import networkx as nx
 
-from pdf_parser import DocumentMetadata
-from reference_extractor import DocumentReference
+from .pdf_parser import DocumentMetadata
+from .reference_extractor import DocumentReference
 
 
 # ─────────────────────────────────────────────

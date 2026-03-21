@@ -7,16 +7,31 @@
     "total_pages": 3,
     "file_path": "sebi_circular.pdf"
   },
-  "total_references": 7,
+  "total_references": 8,
   "references_by_type": {
-    "regulation": [
+    "notification": [
       {
-        "document_type": "regulation",
+        "document_type": "notification",
         "title": "SEBI (Mutual Funds) Regulations, 2026",
         "circular_number": "LAD-NRO/GN/2026/294",
         "date": "January 14, 2026",
         "clause": "Regulation 42(1)",
         "context": "Permits mutual funds to borrow funds for specific purposes and sets limits on borrowings.",
+        "found_on_pages": [
+          1,
+          2
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "regulation": [
+      {
+        "document_type": "regulation",
+        "title": "SEBI (Mutual Funds) Regulations, 2026",
+        "circular_number": "",
+        "date": "",
+        "clause": "Regulation 42(2)",
+        "context": "Exempts intraday borrowings from the 20% limit subject to conditions specified by the Board.",
         "found_on_pages": [
           1
         ],
@@ -28,7 +43,7 @@
         "circular_number": "",
         "date": "",
         "clause": "clauses 6 and 7 of Fourth Schedule",
-        "context": "AMCs shall ensure compliance of clauses 6 and 7 of Fourth Schedule of SEBI (Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for Mutual Funds dated June 27, 2024.",
+        "context": "Compliance with specific clauses of the SEBI (Mutual Funds) Regulations, 2026.",
         "found_on_pages": [
           2
         ],
@@ -54,7 +69,19 @@
         "circular_number": "",
         "date": "June 27, 2024",
         "clause": "para 16.8",
-        "context": "AMCs shall ensure compliance of clauses 6 and 7 of Fourth Schedule of SEBI (Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for Mutual Funds dated June 27, 2024.",
+        "context": "Compliance with specific paragraph of the SEBI Master Circular for Mutual Funds.",
+        "found_on_pages": [
+          2
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_type": "master_circular",
+        "title": "SEBI Master Circular for Mutual Funds",
+        "circular_number": "",
+        "date": "June 27, 2024",
+        "clause": "para 10.9",
+        "context": "Cost of intraday borrowing and responsibility for losses or costs due to unforeseen events.",
         "found_on_pages": [
           2
         ],
@@ -64,24 +91,13 @@
     "circular": [
       {
         "document_type": "circular",
-        "title": "SEBI Circular",
+        "title": "Introduction of Closing Auction Session",
         "circular_number": "HO/47/11/11(3)2025-MRD-POD2/I/2765/2026",
         "date": "January 16, 2026",
         "clause": "",
-        "context": "SEBI has introduced Closing Auction Session in the equity cash segment of the Stock Exchanges vide circular reference no. HO/47/11/11(3)2025-MRD-POD2/I/2765/2026 dated January 16, 2026, effective from August 03, 2026.",
+        "context": "Introduction of the Closing Auction Session in the equity cash segment of the Stock Exchanges.",
         "found_on_pages": [
-          2
-        ],
-        "confidence": 1.0
-      },
-      {
-        "document_type": "circular",
-        "title": "SEBI circular",
-        "circular_number": "",
-        "date": "January 16, 2026",
-        "clause": "",
-        "context": "the equity cash segment of the Stock Exchanges with effect from the date of applicability of the aforesaid SEBI circular dated January 16, 2026 and in the manner specified therein.",
-        "found_on_pages": [
+          2,
           3
         ],
         "confidence": 1.0
@@ -104,12 +120,25 @@
   },
   "references": [
     {
-      "document_type": "regulation",
+      "document_type": "notification",
       "title": "SEBI (Mutual Funds) Regulations, 2026",
       "circular_number": "LAD-NRO/GN/2026/294",
       "date": "January 14, 2026",
       "clause": "Regulation 42(1)",
       "context": "Permits mutual funds to borrow funds for specific purposes and sets limits on borrowings.",
+      "found_on_pages": [
+        1,
+        2
+      ],
+      "confidence": 1.0
+    },
+    {
+      "document_type": "regulation",
+      "title": "SEBI (Mutual Funds) Regulations, 2026",
+      "circular_number": "",
+      "date": "",
+      "clause": "Regulation 42(2)",
+      "context": "Exempts intraday borrowings from the 20% limit subject to conditions specified by the Board.",
       "found_on_pages": [
         1
       ],
@@ -121,7 +150,7 @@
       "circular_number": "",
       "date": "",
       "clause": "clauses 6 and 7 of Fourth Schedule",
-      "context": "AMCs shall ensure compliance of clauses 6 and 7 of Fourth Schedule of SEBI (Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for Mutual Funds dated June 27, 2024.",
+      "context": "Compliance with specific clauses of the SEBI (Mutual Funds) Regulations, 2026.",
       "found_on_pages": [
         2
       ],
@@ -133,7 +162,19 @@
       "circular_number": "",
       "date": "June 27, 2024",
       "clause": "para 16.8",
-      "context": "AMCs shall ensure compliance of clauses 6 and 7 of Fourth Schedule of SEBI (Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for Mutual Funds dated June 27, 2024.",
+      "context": "Compliance with specific paragraph of the SEBI Master Circular for Mutual Funds.",
+      "found_on_pages": [
+        2
+      ],
+      "confidence": 1.0
+    },
+    {
+      "document_type": "master_circular",
+      "title": "SEBI Master Circular for Mutual Funds",
+      "circular_number": "",
+      "date": "June 27, 2024",
+      "clause": "para 10.9",
+      "context": "Cost of intraday borrowing and responsibility for losses or costs due to unforeseen events.",
       "found_on_pages": [
         2
       ],
@@ -141,24 +182,13 @@
     },
     {
       "document_type": "circular",
-      "title": "SEBI Circular",
+      "title": "Introduction of Closing Auction Session",
       "circular_number": "HO/47/11/11(3)2025-MRD-POD2/I/2765/2026",
       "date": "January 16, 2026",
       "clause": "",
-      "context": "SEBI has introduced Closing Auction Session in the equity cash segment of the Stock Exchanges vide circular reference no. HO/47/11/11(3)2025-MRD-POD2/I/2765/2026 dated January 16, 2026, effective from August 03, 2026.",
+      "context": "Introduction of the Closing Auction Session in the equity cash segment of the Stock Exchanges.",
       "found_on_pages": [
-        2
-      ],
-      "confidence": 1.0
-    },
-    {
-      "document_type": "circular",
-      "title": "SEBI circular",
-      "circular_number": "",
-      "date": "January 16, 2026",
-      "clause": "",
-      "context": "the equity cash segment of the Stock Exchanges with effect from the date of applicability of the aforesaid SEBI circular dated January 16, 2026 and in the manner specified therein.",
-      "found_on_pages": [
+        2,
         3
       ],
       "confidence": 1.0
@@ -189,7 +219,7 @@
     }
   ],
   "graph": {
-    "nodes": 8,
-    "edges": 7
+    "nodes": 7,
+    "edges": 6
   }
 }

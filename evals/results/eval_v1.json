@@ -7,14 +7,14 @@
   "fn": 1,
   "field_scores": {
     "document_type": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75
     },
     "title": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
+      "precision": 0.875,
+      "recall": 0.875,
+      "f1": 0.875
     },
     "circular_number": {
       "precision": 0.75,
@@ -36,7 +36,7 @@
     {
       "document_type": "circular",
       "title": "SEBI circular",
-      "circular_number": "dated January 16, 2026",
+      "circular_number": "",
       "date": "January 16, 2026",
       "clause": "",
       "context": "the equity cash segment of the Stock Exchanges with effect from the date of applicability of the aforesaid SEBI circular dated January 16, 2026 and in the manner specified therein.",
