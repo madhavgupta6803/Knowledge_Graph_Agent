@@ -1,0 +1,61 @@
+{
+  "source_circular": "HO/(92)2026-IMD-POD-2/I/6961/2026",
+  "references": [
+    {
+      "document_type": "regulation",
+      "title": "SEBI (Mutual Funds) Regulations, 2026",
+      "circular_number": "LAD-NRO/GN/2026/294",
+      "date": "January 14, 2026",
+      "clause": "Regulation 42(1)",
+      "found_on_pages": [1, 2]
+    },
+    {
+      "document_type": "regulation",
+      "title": "SEBI (Mutual Funds) Regulations, 2026",
+      "circular_number": "LAD-NRO/GN/2026/294",
+      "date": "January 14, 2026",
+      "clause": "Regulation 42(2)",
+      "found_on_pages": [1]
+    },
+    {
+      "document_type": "master_circular",
+      "title": "SEBI Master Circular for Mutual Funds",
+      "circular_number": "",
+      "date": "June 27, 2024",
+      "clause": "para 16.8",
+      "found_on_pages": [2]
+    },
+    {
+      "document_type": "master_circular",
+      "title": "SEBI Master Circular for Mutual Funds",
+      "circular_number": "",
+      "date": "June 27, 2024",
+      "clause": "para 10.9",
+      "found_on_pages": [2]
+    },
+    {
+      "document_type": "circular",
+      "title": "Closing Auction Session in the equity cash segment of the Stock Exchanges",
+      "circular_number": "HO/47/11/11(3)2025-MRD-POD2/I/2765/2026",
+      "date": "January 16, 2026",
+      "clause": "",
+      "found_on_pages": [2, 3]
+    },
+    {
+      "document_type": "act",
+      "title": "Securities and Exchange Board of India Act, 1992",
+      "circular_number": "",
+      "date": "",
+      "clause": "Section 11(1)",
+      "found_on_pages": [3]
+    },
+    {
+      "document_type": "regulation",
+      "title": "SEBI (Mutual Funds) Regulations, 1996",
+      "circular_number": "",
+      "date": "",
+      "clause": "Regulation 77",
+      "found_on_pages": [3]
+    }
+  ]
+}

@@ -60,7 +60,7 @@ Extract all references to external documents from this page."""
 
 def run_agent_with_prompt(pdf_path, provider, system_prompt, user_prompt_template, output_suffix):
     """Run the agent with a custom prompt, return list of reference dicts."""
-    import agent.reference_extractor as re_mod
+    import reference_extractor as re_mod
 
     # Temporarily override prompts
     original_system = re_mod.SYSTEM_PROMPT
@@ -69,18 +69,23 @@ def run_agent_with_prompt(pdf_path, provider, system_prompt, user_prompt_templat
     re_mod.PAGE_USER_PROMPT = user_prompt_template
 
     try:
-        from agent.pdf_parser import extract_pages
-        from agent.reference_extractor import extract_references_from_page, deduplicate_references
+        from pdf_parser import extract_pages
+        from reference_extractor import extract_references_from_page, deduplicate_references
 
         pages, metadata = extract_pages(pdf_path)
 
         if provider == "anthropic":
             import anthropic
             client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-        else:
+        elif provider == "gemini":
             import google.generativeai as genai
             genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-            client = genai.GenerativeModel("gemini-2.0-flash")
+        elif provider == "huggingface":
+            from huggingface_hub import InferenceClient
+            client = InferenceClient(
+                model="Qwen/Qwen2.5-72B-Instruct",
+                api_key=os.environ["HUGGINGFACE_TOKEN"]
+            )
 
         all_raw = []
         for page in pages:
@@ -99,7 +104,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--pdf",          required=True)
     parser.add_argument("--ground-truth", required=True)
-    parser.add_argument("--provider",     default="anthropic", choices=["anthropic", "gemini"])
+    parser.add_argument("--provider", default="anthropic", choices=["anthropic", "gemini", "huggingface"])
     args = parser.parse_args()
 
     from evals.evaluator import evaluate, print_report, compare_runs
