@@ -602,7 +602,7 @@ def _call_gemini(model, text: str, page_number: int) -> str:
 
 
 def _call_huggingface(client, text: str, page_number: int) -> str:
-    full_prompt = f"{SYSTEM_PROMPT}\n\n{PAGE_USER_PROMPT.format(page_number=page_number, text=text[:5000])}"
+    full_prompt = f"{SYSTEM_PROMPT}\n\n{PAGE_USER_PROMPT.format(page_number=page_number, text=text[:20000])}"
     response = client.chat_completion(
         messages=[{"role": "user", "content": full_prompt}],
         max_tokens=2000,
@@ -726,6 +726,33 @@ def _date_and_type_match(a: DocumentReference, b: DocumentReference) -> bool:
     return _is_vague_title(a.title) or _is_vague_title(b.title)
 
 
+def _call_and_parse(client, provider: str, prompt: str) -> List[Dict]:
+    """Helper: call the LLM and parse JSON response. Shared by both passes."""
+    if provider == "anthropic":
+        resp = client.messages.create(
+            model="claude-3-5-sonnet-20240620",
+            max_tokens=500,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        raw = resp.content[0].text.strip()
+    elif provider == "gemini":
+        resp = client.generate_content(prompt)
+        raw = resp.text.strip()
+    elif provider == "huggingface":
+        resp = client.chat.completions.create(
+            model="Qwen/Qwen2.5-72B-Instruct",
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=500,
+            temperature=0.1,
+        )
+        raw = resp.choices[0].message.content.strip()
+    else:
+        return []
+
+    raw = re.sub(r"^```(?:json)?\s*", "", raw, flags=re.MULTILINE)
+    raw = re.sub(r"```\s*$", "", raw, flags=re.MULTILINE)
+    return json.loads(raw.strip()) if raw.strip() else []
+
 # ─────────────────────────────────────────────
 # FIX 2 — Verification pass for Master Circular clauses
 # ─────────────────────────────────────────────
@@ -736,11 +763,10 @@ def verify_master_circular_clauses(
     provider: str,
 ) -> List[Dict]:
     """
-    Second LLM pass: for any page that mentions 'Master Circular',
-    explicitly ask the model to enumerate EVERY paragraph/clause reference.
-
-    This catches cases where the main pass collapses multiple clause
-    references (e.g. para 10.9 and para 16.8) into a single entry.
+    Second LLM pass: for any page mentioning a Master Circular,
+    first discover WHICH master circulars are referenced, then
+    extract all paragraph/clause references for each one.
+    Fully generic — works across any SEBI circular PDF.
     """
     extra_refs = []
 
@@ -748,69 +774,69 @@ def verify_master_circular_clauses(
         if "master circular" not in page.text.lower():
             continue
 
-        # prompt = (
-        #     "Read the following page carefully.\n"
-        #     "List EVERY distinct paragraph or clause number referenced from the "
-        #     "'SEBI Master Circular for Mutual Funds'.\n"
-        #     "Return ONLY a JSON array of objects with keys: clause, context.\n"
-        #     "If none found, return [].\n\n"
-        #     f"Page {page.page_number}:\n{page.text[:3000]}"
-        # )
-        prompt = (
+        # ── Step 1: Discover which master circulars appear on this page ──
+        discovery_prompt = (
             "Read the following page carefully.\n"
-            "List EVERY distinct paragraph number referenced FROM the "
-            "'SEBI Master Circular for Mutual Funds' document.\n"
-            "IMPORTANT: Only extract references that use the format 'para X.Y' "
-            "where X.Y is a paragraph number INSIDE the Master Circular.\n"
-            "Do NOT extract paragraph numbers of the current circular being read "
-            "(e.g. 4.4, 4.5 are sections of the current circular, NOT master circular references).\n"
-            "Valid examples: 'para 10.9', 'para 16.8'\n"
-            "Invalid examples: '4.4', '4.5' (these are sections of the current document)\n"
-            "Return ONLY a JSON array of objects with keys: clause, context.\n"
+            "List every distinct Master Circular document referenced on this page.\n"
+            "For each one, extract its title and date.\n"
+            "Return ONLY a JSON array of objects with keys: title, date.\n"
+            "Example: [{\"title\": \"SEBI Master Circular for Mutual Funds\", "
+            "\"date\": \"June 27, 2024\"}]\n"
             "If none found, return [].\n\n"
             f"Page {page.page_number}:\n{page.text[:3000]}"
         )
 
         try:
-            if provider == "anthropic":
-                resp = client.messages.create(
-                    model="claude-3-5-sonnet-20240620",
-                    max_tokens=500,
-                    messages=[{"role": "user", "content": prompt}]
-                )
-                raw = resp.content[0].text.strip()
-            elif provider == "gemini":
-                resp = client.generate_content(prompt)
-                raw = resp.text.strip()
-            elif provider == "huggingface":
-                resp = client.chat_completion(
-                    messages=[{"role": "user", "content": prompt}],
-                    max_tokens=500,
-                    temperature=0.1,
-                )
-                raw = resp.choices[0].message.content.strip()
-            else:
+            master_circulars = _call_and_parse(client, provider, discovery_prompt)
+        except Exception as e:
+            print(f"  [WARNING] Discovery pass failed on page {page.page_number}: {e}")
+            continue
+
+        if not master_circulars:
+            continue
+
+        # ── Step 2: For each master circular, find all para references ──
+        for mc in master_circulars:
+            mc_title = mc.get("title", "").strip()
+            mc_date  = mc.get("date", "").strip()
+
+            if not mc_title:
                 continue
 
-            raw = re.sub(r"^```(?:json)?\s*", "", raw, flags=re.MULTILINE)
-            raw = re.sub(r"```\s*$", "", raw, flags=re.MULTILINE)
-            clauses = json.loads(raw.strip())
+            clause_prompt = (
+                f"Read the following page carefully.\n"
+                f"List EVERY distinct paragraph number referenced FROM "
+                f"'{mc_title}' (dated {mc_date}).\n"
+                f"IMPORTANT: Only extract references in the format 'para X.Y' "
+                f"where X.Y is a paragraph number INSIDE that Master Circular.\n"
+                f"Do NOT extract paragraph numbers of the current circular being read "
+                f"(e.g. 4.4, 4.5 are sections of the current document, not the master circular).\n"
+                f"Valid examples: 'para 10.9', 'para 16.8'\n"
+                f"Invalid examples: '4.4', '4.5'\n"
+                f"Return ONLY a JSON array of objects with keys: clause, context.\n"
+                f"If none found, return [].\n\n"
+                f"Page {page.page_number}:\n{page.text[:3000]}"
+            )
+
+            try:
+                clauses = _call_and_parse(client, provider, clause_prompt)
+            except Exception as e:
+                print(f"  [WARNING] Clause pass failed for '{mc_title}' "
+                      f"on page {page.page_number}: {e}")
+                continue
 
             for c in clauses:
                 if not isinstance(c, dict) or not c.get("clause"):
                     continue
                 extra_refs.append({
                     "document_type": "master_circular",
-                    "title": "SEBI Master Circular for Mutual Funds",
+                    "title": mc_title,         # ← from discovery, not hardcoded
                     "circular_number": "",
-                    "date": "June 27, 2024",
+                    "date": mc_date,           # ← from discovery, not hardcoded
                     "clause": c.get("clause", ""),
                     "context": c.get("context", ""),
                     "page_number": page.page_number,
                 })
-
-        except Exception as e:
-            print(f"  [WARNING] Verification pass failed on page {page.page_number}: {e}")
 
     return extra_refs
 

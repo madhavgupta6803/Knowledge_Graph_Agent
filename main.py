@@ -221,6 +221,7 @@ def get_client(provider: str):
             sys.exit("Set HUGGINGFACE_TOKEN environment variable.")
         
         # We target the Qwen 2.5 72B model on Hugging Face
+        # return InferenceClient(model="Qwen/Qwen2.5-72B-Instruct", token=api_key)
         return InferenceClient(model="Qwen/Qwen2.5-72B-Instruct", token=api_key)
 
     else:

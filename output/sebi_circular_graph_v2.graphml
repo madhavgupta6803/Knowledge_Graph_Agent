@@ -30,9 +30,9 @@
       <data key="d3">regulation</data>
       <data key="d4">False</data>
     </node>
-    <node id="SEBI Master Circular for Mutual Funds">
+    <node id="June 27, 2024">
       <data key="d0">SEBI Master Circular for Mutual Funds</data>
-      <data key="d1" />
+      <data key="d1">June 27, 2024</data>
       <data key="d2">June 27, 2024</data>
       <data key="d3">master_circular</data>
       <data key="d4">False</data>
@@ -60,22 +60,22 @@
     </node>
     <edge source="HO/(92)2026-IMD-POD-2/I/6961/2026" target="LAD-NRO/GN/2026/294">
       <data key="d5">Regulation 42(1)</data>
-      <data key="d6">Permits mutual funds to borrow funds for specific purposes and sets limits on borrowings.</data>
+      <data key="d6">Permits mutual funds to borrow funds for specific purposes and sets limits.</data>
       <data key="d7">[1, 2]</data>
     </edge>
     <edge source="HO/(92)2026-IMD-POD-2/I/6961/2026" target="SEBI (Mutual Funds) Regulations, 2026">
       <data key="d5">clauses 6 and 7 of Fourth Schedule</data>
-      <data key="d6">4.4. AMCs shall ensure compliance of clauses 6 and 7 of Fourth Schedule of SEBI (Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for Mutual Funds dated June 27, 2024.</data>
+      <data key="d6">AMCs shall ensure compliance of clauses 6 and 7 of Fourth Schedule of SEBI (Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for Mutual Funds dated June 27, 2024.</data>
       <data key="d7">[2]</data>
     </edge>
-    <edge source="HO/(92)2026-IMD-POD-2/I/6961/2026" target="SEBI Master Circular for Mutual Funds">
+    <edge source="HO/(92)2026-IMD-POD-2/I/6961/2026" target="June 27, 2024">
       <data key="d5">para 10.9</data>
-      <data key="d6">4.5. In line with para 10.9 of SEBI Master Circular for Mutual Funds dated June 27, 2024, cost of intraday borrowing, if any, shall be borne by the AMC. Further, any loss or cost incurred, on account of any unforeseen event or delay in receiving the funds from receivables as mentioned at para 4.3 shall be borne by the AMC.</data>
+      <data key="d6">In line with para 10.9 of SEBI Master Circular for Mutual Funds dated June 27, 2024, cost of intraday borrowing, if any, shall be borne by the AMC.</data>
       <data key="d7">[2]</data>
     </edge>
     <edge source="HO/(92)2026-IMD-POD-2/I/6961/2026" target="HO/47/11/11(3)2025-MRD-POD2/I/2765/2026">
       <data key="d5" />
-      <data key="d6">5. SEBI has introduced Closing Auction Session in the equity cash segment of the Stock Exchanges vide circular reference no. HO/47/11/11(3)2025-MRD-POD2/I/2765/2026 dated January 16, 2026, effective from August 03, 2026.</data>
+      <data key="d6">SEBI has introduced Closing Auction Session in the equity cash segment of the Stock Exchanges vide circular reference no. HO/47/11/11(3)2025-MRD-POD2/I/2765/2026 dated January 16, 2026, effective from August 03, 2026.</data>
       <data key="d7">[2, 3]</data>
     </edge>
     <edge source="HO/(92)2026-IMD-POD-2/I/6961/2026" target="Securities and Exchange Board of India Act, 1992">

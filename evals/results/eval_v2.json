@@ -17,9 +17,9 @@
       "f1": 0.9375
     },
     "circular_number": {
-      "precision": 0.6875,
-      "recall": 0.6875,
-      "f1": 0.6875
+      "precision": 0.4375,
+      "recall": 0.4375,
+      "f1": 0.4375
     },
     "date": {
       "precision": 0.6875,
