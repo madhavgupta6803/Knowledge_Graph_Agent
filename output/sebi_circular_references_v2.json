@@ -1,9 +1,15 @@
 {
   "source_document": {
-    "title": "(Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for",
-    "circular_number": "",
+    "title": "Borrowing by Mutual Funds",
+    "circular_number": "HO/(92)2026-IMD-POD-2/I/6961/2026",
     "date": "March 13, 2026",
     "issuing_authority": "Securities and Exchange Board of India (SEBI)",
+    "addressees": [
+      "All Mutual Funds",
+      "All Asset Management Companies (AMCs)",
+      "All Trustee Companies/ Board of Trustees of Mutual Funds",
+      "Association of Mutual Funds in India (AMFI)"
+    ],
     "total_pages": 3,
     "file_path": "sebi_circular.pdf"
   },
@@ -43,7 +49,7 @@
         "circular_number": "",
         "date": "",
         "clause": "clauses 6 and 7 of Fourth Schedule",
-        "context": "Compliance with specific clauses of the SEBI (Mutual Funds) Regulations, 2026.",
+        "context": "4.4. AMCs shall ensure compliance of clauses 6 and 7 of Fourth Schedule of SEBI (Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for Mutual Funds dated June 27, 2024.",
         "found_on_pages": [
           2
         ],
@@ -69,7 +75,7 @@
         "circular_number": "",
         "date": "June 27, 2024",
         "clause": "para 16.8",
-        "context": "Compliance with specific paragraph of the SEBI Master Circular for Mutual Funds.",
+        "context": "4.4. AMCs shall ensure compliance of clauses 6 and 7 of Fourth Schedule of SEBI (Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for Mutual Funds dated June 27, 2024.",
         "found_on_pages": [
           2
         ],
@@ -81,7 +87,7 @@
         "circular_number": "",
         "date": "June 27, 2024",
         "clause": "para 10.9",
-        "context": "Cost of intraday borrowing and responsibility for losses or costs due to unforeseen events.",
+        "context": "4.5. In line with para 10.9 of SEBI Master Circular for Mutual Funds dated June 27, 2024, cost of intraday borrowing, if any, shall be borne by the AMC. Further, any loss or cost incurred, on account of any unforeseen event or delay in receiving the funds from receivables as mentioned at para 4.3 shall be borne by the AMC.",
         "found_on_pages": [
           2
         ],
@@ -91,11 +97,11 @@
     "circular": [
       {
         "document_type": "circular",
-        "title": "Introduction of Closing Auction Session",
+        "title": "SEBI Circular",
         "circular_number": "HO/47/11/11(3)2025-MRD-POD2/I/2765/2026",
         "date": "January 16, 2026",
         "clause": "",
-        "context": "Introduction of the Closing Auction Session in the equity cash segment of the Stock Exchanges.",
+        "context": "5. SEBI has introduced Closing Auction Session in the equity cash segment of the Stock Exchanges vide circular reference no. HO/47/11/11(3)2025-MRD-POD2/I/2765/2026 dated January 16, 2026, effective from August 03, 2026.",
         "found_on_pages": [
           2,
           3
@@ -150,7 +156,7 @@
       "circular_number": "",
       "date": "",
       "clause": "clauses 6 and 7 of Fourth Schedule",
-      "context": "Compliance with specific clauses of the SEBI (Mutual Funds) Regulations, 2026.",
+      "context": "4.4. AMCs shall ensure compliance of clauses 6 and 7 of Fourth Schedule of SEBI (Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for Mutual Funds dated June 27, 2024.",
       "found_on_pages": [
         2
       ],
@@ -162,7 +168,7 @@
       "circular_number": "",
       "date": "June 27, 2024",
       "clause": "para 16.8",
-      "context": "Compliance with specific paragraph of the SEBI Master Circular for Mutual Funds.",
+      "context": "4.4. AMCs shall ensure compliance of clauses 6 and 7 of Fourth Schedule of SEBI (Mutual Funds) Regulations, 2026 and para 16.8 of SEBI Master Circular for Mutual Funds dated June 27, 2024.",
       "found_on_pages": [
         2
       ],
@@ -174,7 +180,7 @@
       "circular_number": "",
       "date": "June 27, 2024",
       "clause": "para 10.9",
-      "context": "Cost of intraday borrowing and responsibility for losses or costs due to unforeseen events.",
+      "context": "4.5. In line with para 10.9 of SEBI Master Circular for Mutual Funds dated June 27, 2024, cost of intraday borrowing, if any, shall be borne by the AMC. Further, any loss or cost incurred, on account of any unforeseen event or delay in receiving the funds from receivables as mentioned at para 4.3 shall be borne by the AMC.",
       "found_on_pages": [
         2
       ],
@@ -182,11 +188,11 @@
     },
     {
       "document_type": "circular",
-      "title": "Introduction of Closing Auction Session",
+      "title": "SEBI Circular",
       "circular_number": "HO/47/11/11(3)2025-MRD-POD2/I/2765/2026",
       "date": "January 16, 2026",
       "clause": "",
-      "context": "Introduction of the Closing Auction Session in the equity cash segment of the Stock Exchanges.",
+      "context": "5. SEBI has introduced Closing Auction Session in the equity cash segment of the Stock Exchanges vide circular reference no. HO/47/11/11(3)2025-MRD-POD2/I/2765/2026 dated January 16, 2026, effective from August 03, 2026.",
       "found_on_pages": [
         2,
         3

@@ -85,12 +85,15 @@ def export_json(
     output_path: str,
 ) -> Dict:
     """Export full results as a structured JSON file."""
+# In knowledge_graph.py, inside export_json(), replace the source_document block with:
+
     payload = {
         "source_document": {
             "title": source_metadata.title,
             "circular_number": source_metadata.circular_number,
             "date": source_metadata.date,
             "issuing_authority": source_metadata.issuing_authority,
+            "addressees": source_metadata.addressees,        # ← NEW
             "total_pages": source_metadata.total_pages,
             "file_path": source_metadata.file_path,
         },
