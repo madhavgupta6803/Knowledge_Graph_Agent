@@ -45,7 +45,7 @@ def build_graph(
         title=source_metadata.title or src_id,
         circular_number=source_metadata.circular_number,
         date=source_metadata.date,
-        document_type="circular",
+        document_type= "circular",  # assuming source is always a circular
         is_source=True,
     )
 
