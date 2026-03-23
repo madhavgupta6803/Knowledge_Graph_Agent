@@ -418,45 +418,16 @@ python3 -m evals.regex_check \
 | LLM-as-Judge | Hallucinations, field errors, duplicates, metadata | 1 API call per reference |
 | Regex check | Wrong circular numbers, dates, clauses | Free |
 
----
-
-## Running Tests
-
-Unit tests cover deduplication logic and evaluator math — no API key needed:
-
-```bash
-pytest tests/ -v
-```
-
-Expected output:
-
-```
-tests/test_agent.py::TestDeduplication::test_same_circular_number_merged PASSED
-tests/test_agent.py::TestDeduplication::test_different_circulars_not_merged PASSED
-tests/test_agent.py::TestDeduplication::test_title_based_dedup PASSED
-tests/test_agent.py::TestDeduplication::test_longer_title_wins PASSED
-tests/test_agent.py::TestDeduplication::test_empty_refs_ignored PASSED
-tests/test_agent.py::TestEvaluator::test_perfect_match PASSED
-tests/test_agent.py::TestEvaluator::test_no_predictions PASSED
-tests/test_agent.py::TestEvaluator::test_extra_prediction_is_fp PASSED
-tests/test_agent.py::TestEvaluator::test_title_fuzzy_match PASSED
-tests/test_agent.py::TestNormHelpers::test_norm_strips_special_chars PASSED
-tests/test_agent.py::TestNormHelpers::test_title_match_substring PASSED
-tests/test_agent.py::TestNormHelpers::test_circnum_match PASSED
-tests/test_agent.py::TestNormHelpers::test_circnum_no_match PASSED
-
-13 passed in 0.13s
-```
 
 ---
 
 ## Models and Providers
 
-| Provider | Model | Setup | Notes |
-|----------|-------|-------|-------|
-| HuggingFace (default) | Qwen/Qwen2.5-72B-Instruct | `HF_TOKEN` env var | Free tier via serverless inference |
-| Anthropic | claude-3-5-sonnet-20240620 | `ANTHROPIC_API_KEY` env var | Best accuracy |
-| Google Gemini | gemini-2.0-flash | `GEMINI_API_KEY` env var | Generous free tier |
+| Provider | Model | Setup |
+|----------|-------|-------|
+| HuggingFace (default) | Qwen/Qwen2.5-72B-Instruct | `HF_TOKEN` env var |
+| Anthropic | claude-3-5-sonnet-20240620 | `ANTHROPIC_API_KEY` env var |
+| Google Gemini | gemini-2.0-flash | `GEMINI_API_KEY` env var |
 
 ### Other models you can use on HuggingFace
 
@@ -464,7 +435,7 @@ Just change the model string in `agent/reference_extractor.py`:
 
 ```python
 model="meta-llama/Llama-3.3-70B-Instruct"   # Best instruction following
-model="Qwen/Qwen3-72B-Instruct"              # Latest Qwen
+model="Qwen/Qwen2.5-72B-Instruct"            
 model="mistralai/Mistral-Small-3.1-24B-Instruct"  # Faster / cheaper
 ```
 
@@ -500,9 +471,3 @@ To build a full knowledge graph across all SEBI circulars:
    - Enter a regulation name and see every circular that references it
    - Click a circular and trace its full dependency tree
    - Get alerts when a new circular modifies a document they are tracking
-
----
-
-## License
-
-MIT
