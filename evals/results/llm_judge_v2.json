@@ -1,6 +1,29 @@
 {
-  "total": 8,
-  "results": [
+  "total_references": 8,
+  "llm_check": {
+    "present": 8,
+    "title_accurate": 8,
+    "circular_number_accurate": 7,
+    "date_accurate": 8,
+    "clause_accurate": 8,
+    "hallucinations": []
+  },
+  "duplicate_check": {
+    "count": 1,
+    "duplicates": [
+      {
+        "index_a": 3,
+        "index_b": 4,
+        "title_a": "SEBI Master Circular for Mutual Funds",
+        "title_b": "SEBI Master Circular for Mutual Funds",
+        "reason": "Same circular_number: 'June 27, 2024'"
+      }
+    ]
+  },
+  "metadata_check": {
+    "warnings": []
+  },
+  "detailed_results": [
     {
       "reference": {
         "document_type": "notification",
@@ -84,10 +107,10 @@
       "verdict": {
         "is_present": true,
         "title_accurate": true,
-        "circular_number_accurate": false,
+        "circular_number_accurate": true,
         "date_accurate": true,
         "clause_accurate": true,
-        "reason": "The circular_number field should be empty as the document does not provide a specific circular number, only a date."
+        "reason": ""
       }
     },
     {
@@ -109,7 +132,7 @@
         "circular_number_accurate": false,
         "date_accurate": true,
         "clause_accurate": true,
-        "reason": "The circular_number should be empty or match the actual content, which does not include a circular number but rather a date."
+        "reason": "The circular_number should be empty as it is not a specific circular number but a date."
       }
     },
     {

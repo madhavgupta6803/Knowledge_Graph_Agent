@@ -1,6 +1,32 @@
 {
-  "total": 7,
-  "results": [
+  "total_references": 7,
+  "llm_check": {
+    "present": 7,
+    "title_accurate": 7,
+    "circular_number_accurate": 7,
+    "date_accurate": 7,
+    "clause_accurate": 7,
+    "hallucinations": []
+  },
+  "duplicate_check": {
+    "count": 1,
+    "duplicates": [
+      {
+        "index_a": 3,
+        "index_b": 4,
+        "title_a": "SEBI Circular",
+        "title_b": "SEBI circular",
+        "reason": "Same date (January 16, 2026) + type (circular) with vague title"
+      }
+    ]
+  },
+  "metadata_check": {
+    "warnings": [
+      "circular_number is empty \u2014 could not be detected from PDF",
+      "addressees list is empty \u2014 could not be detected from PDF"
+    ]
+  },
+  "detailed_results": [
     {
       "reference": {
         "document_type": "regulation",
