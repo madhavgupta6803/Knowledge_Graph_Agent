@@ -1,6 +1,6 @@
 # SEBI Circular Knowledge Graph Agent
 
-> An AI-powered agent that reads any SEBI circular PDF and automatically extracts every reference to other regulatory documents — circulars, regulations, acts, master circulars — structured into a queryable knowledge graph.
+> An AI-powered agent that reads any SEBI circular PDF and automatically extracts every reference to other regulatory documents like circulars, regulations, acts, master circulars which are stored in a JSON along with structuring into a queryable knowledge graph.
 
 ---
 
@@ -23,7 +23,7 @@
 
 ## What It Does
 
-SEBI circulars constantly reference older circulars, regulations, and acts. Compliance officers need to trace these references manually across hundreds of PDFs — a slow, error-prone process.
+SEBI circulars constantly reference older circulars, regulations, and acts. Compliance officers need to trace these references manually across hundreds of PDFs which is a slow, error-prone process.
 
 This agent automates that by:
 
@@ -86,7 +86,7 @@ PDF File
 ## Project Structure
 
 ```
-sebi-kg-agent/
+Knowledge_Graph_Agent/
 │
 ├── agent/
 │   ├── __init__.py
@@ -100,15 +100,17 @@ sebi-kg-agent/
 │   ├── improve.py             # Side-by-side V1 vs V2 prompt comparison
 │   ├── llm_judge.py           # Automatic evaluation without ground truth
 │   ├── regex_check.py         # Zero-cost field verification against PDF text
-│   └── ground_truth/
-│       └── example_ground_truth.json
+│   ├── ground_truth/
+│      └── example_ground_truth.json
+│   └── results/
+│       └── eval_v1.json
+        └── llm_judge_v1.json
 │
 ├── tests/
 │   └── test_agent.py          # 13 unit tests (dedup logic + evaluator math)
 │
 ├── output/                    # Generated files (gitignored)
 ├── main.py                    # CLI entrypoint
-├── conftest.py                # pytest path configuration
 └── requirements.txt
 ```
 
@@ -124,8 +126,8 @@ sebi-kg-agent/
 ### Step 1 — Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/sebi-kg-agent
-cd sebi-kg-agent
+git clone https://github.com/YOUR_USERNAME/Knowledge_Graph_Agent
+cd Knowledge_Graph_Agent
 ```
 
 ### Step 2 — Create and activate a virtual environment
