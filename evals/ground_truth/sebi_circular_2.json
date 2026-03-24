@@ -1,0 +1,79 @@
+{
+  "source_circular": "HO/47/14/12(1)2026-MRD-POD2/I/4229/2026",
+  "source_date": "February 5, 2026",
+  "source_subject": "Creation/Invocation of pledge of securities through depository system",
+  "references": [
+    {
+      "document_type": "master_circular",
+      "title": "SEBI Master Circular for Depositories",
+      "circular_number": "",
+      "date": "December 03, 2024",
+      "clause": "para 4.13",
+      "found_on_pages": [1],
+      "notes": "Primary framework for pledging of shares through depository system"
+    },
+    {
+      "document_type": "regulation",
+      "title": "Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018",
+      "circular_number": "",
+      "date": "2018",
+      "clause": "Regulation 79",
+      "found_on_pages": [1, 3],
+      "notes": "DP Regulations — read with Master Circular para 4.13 and cited in powers section"
+    },
+    {
+      "document_type": "regulation",
+      "title": "Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018",
+      "circular_number": "",
+      "date": "2018",
+      "clause": "Regulation 79(8)",
+      "found_on_pages": [2],
+      "notes": "Pledgee recorded as beneficial owner on invocation"
+    },
+    {
+      "document_type": "regulation",
+      "title": "Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018",
+      "circular_number": "",
+      "date": "2018",
+      "clause": "Regulation 97",
+      "found_on_pages": [3],
+      "notes": "Cited in powers conferred section"
+    },
+    {
+      "document_type": "act",
+      "title": "Depositories Act, 1996",
+      "circular_number": "",
+      "date": "1996",
+      "clause": "Section 12",
+      "found_on_pages": [1],
+      "notes": "Manner of creating and invoking a pledge"
+    },
+    {
+      "document_type": "act",
+      "title": "Depositories Act, 1996",
+      "circular_number": "",
+      "date": "1996",
+      "clause": "Section 26(3)",
+      "found_on_pages": [3],
+      "notes": "Cited in powers conferred section"
+    },
+    {
+      "document_type": "act",
+      "title": "Indian Contract Act, 1872",
+      "circular_number": "",
+      "date": "1872",
+      "clause": "Sections 176 and 177",
+      "found_on_pages": [1, 2],
+      "notes": "Rights of pawnor and pawnee — reasonable notice of sale before selling pledged assets"
+    },
+    {
+      "document_type": "act",
+      "title": "Securities and Exchange Board of India Act, 1992",
+      "circular_number": "",
+      "date": "1992",
+      "clause": "Section 11(1)",
+      "found_on_pages": [3],
+      "notes": "Powers under which this circular is issued"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d7" for="edge" attr.name="found_on_pages" attr.type="string" />
+  <key id="d6" for="edge" attr.name="context" attr.type="string" />
+  <key id="d5" for="edge" attr.name="clause" attr.type="string" />
+  <key id="d4" for="node" attr.name="is_source" attr.type="string" />
+  <key id="d3" for="node" attr.name="document_type" attr.type="string" />
+  <key id="d2" for="node" attr.name="date" attr.type="string" />
+  <key id="d1" for="node" attr.name="circular_number" attr.type="string" />
+  <key id="d0" for="node" attr.name="title" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="HO/47/14/12(1)2026-MRD-POD2/I/4229/2026">
+      <data key="d0">Creation/Invocation of pledge of securities through depository system</data>
+      <data key="d1">HO/47/14/12(1)2026-MRD-POD2/I/4229/2026</data>
+      <data key="d2">February 5, 2026</data>
+      <data key="d3">circular</data>
+      <data key="d4">True</data>
+    </node>
+    <node id="SEBI Master Circular for Depositories">
+      <data key="d0">SEBI Master Circular for Depositories</data>
+      <data key="d1" />
+      <data key="d2">December 03, 2024</data>
+      <data key="d3">master_circular</data>
+      <data key="d4">False</data>
+    </node>
+    <node id="Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018">
+      <data key="d0">Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018</data>
+      <data key="d1" />
+      <data key="d2" />
+      <data key="d3">regulation</data>
+      <data key="d4">False</data>
+    </node>
+    <node id="Depositories Act, 1996">
+      <data key="d0">Depositories Act, 1996</data>
+      <data key="d1" />
+      <data key="d2" />
+      <data key="d3">act</data>
+      <data key="d4">False</data>
+    </node>
+    <node id="Indian Contract Act, 1872">
+      <data key="d0">Indian Contract Act, 1872</data>
+      <data key="d1" />
+      <data key="d2" />
+      <data key="d3">act</data>
+      <data key="d4">False</data>
+    </node>
+    <node id="Depositories Act">
+      <data key="d0">Depositories Act</data>
+      <data key="d1" />
+      <data key="d2" />
+      <data key="d3">act</data>
+      <data key="d4">False</data>
+    </node>
+    <node id="SEBI Regulations">
+      <data key="d0">SEBI Regulations</data>
+      <data key="d1" />
+      <data key="d2" />
+      <data key="d3">regulation</data>
+      <data key="d4">False</data>
+    </node>
+    <node id="DP Regulations">
+      <data key="d0">DP Regulations</data>
+      <data key="d1" />
+      <data key="d2" />
+      <data key="d3">regulation</data>
+      <data key="d4">False</data>
+    </node>
+    <node id="Securities and Exchange Board of India Act, 1992">
+      <data key="d0">Securities and Exchange Board of India Act, 1992</data>
+      <data key="d1" />
+      <data key="d2" />
+      <data key="d3">act</data>
+      <data key="d4">False</data>
+    </node>
+    <edge source="HO/47/14/12(1)2026-MRD-POD2/I/4229/2026" target="SEBI Master Circular for Depositories">
+      <data key="d5">paragraph 4.13</data>
+      <data key="d6">The framework for pledging of shares through the depository system is prescribed in paragraph 4.13 of the SEBI Master Circular for Depositories dated December 03, 2024.</data>
+      <data key="d7">[1]</data>
+    </edge>
+    <edge source="HO/47/14/12(1)2026-MRD-POD2/I/4229/2026" target="Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018">
+      <data key="d5">Regulation 97</data>
+      <data key="d6">This circular is issued in exercise of the powers conferred under Section 11(1) of the Securities and Exchange Board of India Act, 1992 read with Section 26(3) of the Depositories Act, 1996 and Regulation 97 and Regulation 79 of the Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018 to protect the interest of investors in securities and to promote development of, and to regulate securities market.</data>
+      <data key="d7">[3]</data>
+    </edge>
+    <edge source="HO/47/14/12(1)2026-MRD-POD2/I/4229/2026" target="Depositories Act, 1996">
+      <data key="d5">Section 26(3)</data>
+      <data key="d6">This circular is issued in exercise of the powers conferred under Section 11(1) of the Securities and Exchange Board of India Act, 1992 read with Section 26(3) of the Depositories Act, 1996 and Regulation 97 and Regulation 79 of the Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018 to protect the interest of investors in securities and to promote development of, and to regulate securities market.</data>
+      <data key="d7">[3]</data>
+    </edge>
+    <edge source="HO/47/14/12(1)2026-MRD-POD2/I/4229/2026" target="Indian Contract Act, 1872">
+      <data key="d5">Sections 176 and 177</data>
+      <data key="d6">Further, Sections 176 and 177 of the Indian Contract Act, 1872 lay down the rights of the pawnor and pawnee, respectively, and, inter alia, require the pawnee to give a reasonable notice of sale to the pawnor prior to selling the pledged assets.</data>
+      <data key="d7">[1, 2]</data>
+    </edge>
+    <edge source="HO/47/14/12(1)2026-MRD-POD2/I/4229/2026" target="Depositories Act">
+      <data key="d5" />
+      <data key="d6">The pledger and pledgee undertake to abide with the provisions of the Indian Contract Act, 1872, the Depositories Act, SEBI Regulations, circulars, and bye-laws in force from time to time, as may be applicable.</data>
+      <data key="d7">[2]</data>
+    </edge>
+    <edge source="HO/47/14/12(1)2026-MRD-POD2/I/4229/2026" target="SEBI Regulations">
+      <data key="d5" />
+      <data key="d6">The pledger and pledgee undertake to abide with the provisions of the Indian Contract Act, 1872, the Depositories Act, SEBI Regulations, circulars, and bye-laws in force from time to time, as may be applicable.</data>
+      <data key="d7">[2]</data>
+    </edge>
+    <edge source="HO/47/14/12(1)2026-MRD-POD2/I/4229/2026" target="DP Regulations">
+      <data key="d5">Regulation 79(8)</data>
+      <data key="d6">At the time of invocation of pledge, the Depositories shall send an intimation/notification to both pledger and pledgee confirming that the pledge has been invoked and the pledgee has been recorded as “beneficial owner” in terms of Regulation 79(8) of the DP Regulations.</data>
+      <data key="d7">[2]</data>
+    </edge>
+    <edge source="HO/47/14/12(1)2026-MRD-POD2/I/4229/2026" target="Securities and Exchange Board of India Act, 1992">
+      <data key="d5">Section 11(1)</data>
+      <data key="d6">This circular is issued in exercise of the powers conferred under Section 11(1) of the Securities and Exchange Board of India Act, 1992 read with Section 26(3) of the Depositories Act, 1996 and Regulation 97 and Regulation 79 of the Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018 to protect the interest of investors in securities and to promote development of, and to regulate securities market.</data>
+      <data key="d7">[3]</data>
+    </edge>
+  </graph>
+</graphml>

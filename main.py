@@ -290,17 +290,17 @@ def run(pdf_path: str, provider: str, output_dir: str, verbose: bool, skip_graph
     print("\n[ 4/4 ] Building knowledge graph and exporting …")
     G = build_graph(metadata, references)
 
-    json_path = output_dir / f"{stem}_references_v2.json"
+    json_path = output_dir / f"{stem}_references_v1_2.json"
     export_json(G, metadata, references, str(json_path))
     print(f"        ✓ JSON    → {json_path}")
 
     if not skip_graphml:
-        gml_path = output_dir / f"{stem}_graph_v2.graphml"
+        gml_path = output_dir / f"{stem}_graph_v1_2.graphml"
         export_graphml(G, str(gml_path))
         print(f"        ✓ GraphML → {gml_path}")
 
     if not skip_mermaid:
-        mmd_path = output_dir / f"{stem}_diagram_v2.mmd"
+        mmd_path = output_dir / f"{stem}_diagram_v1_2.mmd"
         export_mermaid(G, str(mmd_path) if hasattr(G, 'nodes') else None)
         print(f"        ✓ Mermaid → {mmd_path}")
 

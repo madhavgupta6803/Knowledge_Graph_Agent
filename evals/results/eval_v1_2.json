@@ -1,0 +1,86 @@
+{
+  "precision": 0.7,
+  "recall": 0.875,
+  "f1": 0.7778,
+  "tp": 7,
+  "fp": 3,
+  "fn": 1,
+  "field_scores": {
+    "document_type": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "title": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "circular_number": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "date": {
+      "precision": 0.0909,
+      "recall": 0.0909,
+      "f1": 0.0909
+    },
+    "clause": {
+      "precision": 0.3636,
+      "recall": 0.3636,
+      "f1": 0.3636
+    }
+  },
+  "false_positives": [
+    {
+      "document_type": "regulation",
+      "title": "SEBI Regulations",
+      "circular_number": "",
+      "date": "",
+      "clause": "",
+      "context": "The pledger and pledgee undertake to abide with the provisions of the Indian Contract Act, 1872, the Depositories Act, SEBI Regulations, circulars, and bye-laws in force from time to time, as may be applicable.",
+      "found_on_pages": [
+        2
+      ],
+      "confidence": 1.0
+    },
+    {
+      "document_type": "regulation",
+      "title": "DP Regulations",
+      "circular_number": "",
+      "date": "",
+      "clause": "Regulation 79(8)",
+      "context": "At the time of invocation of pledge, the Depositories shall send an intimation/notification to both pledger and pledgee confirming that the pledge has been invoked and the pledgee has been recorded as \u201cbeneficial owner\u201d in terms of Regulation 79(8) of the DP Regulations.",
+      "found_on_pages": [
+        2
+      ],
+      "confidence": 1.0
+    },
+    {
+      "document_type": "act",
+      "title": "Depositories Act, 1996",
+      "circular_number": "",
+      "date": "",
+      "clause": "Section 26(3)",
+      "context": "This circular is issued in exercise of the powers conferred under Section 11(1) of the Securities and Exchange Board of India Act, 1992 read with Section 26(3) of the Depositories Act, 1996 and Regulation 97 and Regulation 79 of the Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018 to protect the interest of investors in securities and to promote development of, and to regulate securities market.",
+      "found_on_pages": [
+        3
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "false_negatives": [
+    {
+      "document_type": "regulation",
+      "title": "Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018",
+      "circular_number": "",
+      "date": "2018",
+      "clause": "Regulation 97",
+      "found_on_pages": [
+        3
+      ],
+      "notes": "Cited in powers conferred section"
+    }
+  ]
+}

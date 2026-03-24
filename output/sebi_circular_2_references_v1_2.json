@@ -1,0 +1,272 @@
+{
+  "source_document": {
+    "title": "Creation/Invocation of pledge of securities through depository system",
+    "circular_number": "HO/47/14/12(1)2026-MRD-POD2/I/4229/2026",
+    "date": "February 5, 2026",
+    "issuing_authority": "Securities and Exchange Board of India (SEBI)",
+    "addressees": [
+      "All Depositories"
+    ],
+    "total_pages": 3,
+    "file_path": "sebi_circular_2.pdf"
+  },
+  "total_references": 10,
+  "references_by_type": {
+    "master_circular": [
+      {
+        "document_type": "master_circular",
+        "title": "SEBI Master Circular for Depositories",
+        "circular_number": "",
+        "date": "December 03, 2024",
+        "clause": "paragraph 4.13",
+        "context": "The framework for pledging of shares through the depository system is prescribed in paragraph 4.13 of the SEBI Master Circular for Depositories dated December 03, 2024.",
+        "found_on_pages": [
+          1
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "regulation": [
+      {
+        "document_type": "regulation",
+        "title": "Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018",
+        "circular_number": "",
+        "date": "",
+        "clause": "Regulation 79",
+        "context": "The framework for pledging of shares through the depository system is prescribed in paragraph 4.13 of the SEBI Master Circular for Depositories dated December 03, 2024 (‘Master Circular’) read with Regulation 79 of the Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018 (‘DP Regulations’).",
+        "found_on_pages": [
+          1,
+          3
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_type": "regulation",
+        "title": "SEBI Regulations",
+        "circular_number": "",
+        "date": "",
+        "clause": "",
+        "context": "The pledger and pledgee undertake to abide with the provisions of the Indian Contract Act, 1872, the Depositories Act, SEBI Regulations, circulars, and bye-laws in force from time to time, as may be applicable.",
+        "found_on_pages": [
+          2
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_type": "regulation",
+        "title": "DP Regulations",
+        "circular_number": "",
+        "date": "",
+        "clause": "Regulation 79(8)",
+        "context": "At the time of invocation of pledge, the Depositories shall send an intimation/notification to both pledger and pledgee confirming that the pledge has been invoked and the pledgee has been recorded as “beneficial owner” in terms of Regulation 79(8) of the DP Regulations.",
+        "found_on_pages": [
+          2
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_type": "regulation",
+        "title": "Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018",
+        "circular_number": "",
+        "date": "",
+        "clause": "Regulation 97",
+        "context": "This circular is issued in exercise of the powers conferred under Section 11(1) of the Securities and Exchange Board of India Act, 1992 read with Section 26(3) of the Depositories Act, 1996 and Regulation 97 and Regulation 79 of the Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018 to protect the interest of investors in securities and to promote development of, and to regulate securities market.",
+        "found_on_pages": [
+          3
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "act": [
+      {
+        "document_type": "act",
+        "title": "Depositories Act, 1996",
+        "circular_number": "",
+        "date": "",
+        "clause": "Section 12",
+        "context": "In terms of the said framework, the Depositories are, inter alia, required to make provisions in their respective bye-laws to provide for the manner of creating and invoking a pledge in accordance with Section 12 of the Depositories Act, 1996 and the DP Regulations.",
+        "found_on_pages": [
+          1
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_type": "act",
+        "title": "Indian Contract Act, 1872",
+        "circular_number": "",
+        "date": "",
+        "clause": "Sections 176 and 177",
+        "context": "Further, Sections 176 and 177 of the Indian Contract Act, 1872 lay down the rights of the pawnor and pawnee, respectively, and, inter alia, require the pawnee to give a reasonable notice of sale to the pawnor prior to selling the pledged assets.",
+        "found_on_pages": [
+          1,
+          2
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_type": "act",
+        "title": "Depositories Act",
+        "circular_number": "",
+        "date": "",
+        "clause": "",
+        "context": "The pledger and pledgee undertake to abide with the provisions of the Indian Contract Act, 1872, the Depositories Act, SEBI Regulations, circulars, and bye-laws in force from time to time, as may be applicable.",
+        "found_on_pages": [
+          2
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_type": "act",
+        "title": "Securities and Exchange Board of India Act, 1992",
+        "circular_number": "",
+        "date": "",
+        "clause": "Section 11(1)",
+        "context": "This circular is issued in exercise of the powers conferred under Section 11(1) of the Securities and Exchange Board of India Act, 1992 read with Section 26(3) of the Depositories Act, 1996 and Regulation 97 and Regulation 79 of the Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018 to protect the interest of investors in securities and to promote development of, and to regulate securities market.",
+        "found_on_pages": [
+          3
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_type": "act",
+        "title": "Depositories Act, 1996",
+        "circular_number": "",
+        "date": "",
+        "clause": "Section 26(3)",
+        "context": "This circular is issued in exercise of the powers conferred under Section 11(1) of the Securities and Exchange Board of India Act, 1992 read with Section 26(3) of the Depositories Act, 1996 and Regulation 97 and Regulation 79 of the Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018 to protect the interest of investors in securities and to promote development of, and to regulate securities market.",
+        "found_on_pages": [
+          3
+        ],
+        "confidence": 1.0
+      }
+    ]
+  },
+  "references": [
+    {
+      "document_type": "master_circular",
+      "title": "SEBI Master Circular for Depositories",
+      "circular_number": "",
+      "date": "December 03, 2024",
+      "clause": "paragraph 4.13",
+      "context": "The framework for pledging of shares through the depository system is prescribed in paragraph 4.13 of the SEBI Master Circular for Depositories dated December 03, 2024.",
+      "found_on_pages": [
+        1
+      ],
+      "confidence": 1.0
+    },
+    {
+      "document_type": "regulation",
+      "title": "Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018",
+      "circular_number": "",
+      "date": "",
+      "clause": "Regulation 79",
+      "context": "The framework for pledging of shares through the depository system is prescribed in paragraph 4.13 of the SEBI Master Circular for Depositories dated December 03, 2024 (‘Master Circular’) read with Regulation 79 of the Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018 (‘DP Regulations’).",
+      "found_on_pages": [
+        1,
+        3
+      ],
+      "confidence": 1.0
+    },
+    {
+      "document_type": "act",
+      "title": "Depositories Act, 1996",
+      "circular_number": "",
+      "date": "",
+      "clause": "Section 12",
+      "context": "In terms of the said framework, the Depositories are, inter alia, required to make provisions in their respective bye-laws to provide for the manner of creating and invoking a pledge in accordance with Section 12 of the Depositories Act, 1996 and the DP Regulations.",
+      "found_on_pages": [
+        1
+      ],
+      "confidence": 1.0
+    },
+    {
+      "document_type": "act",
+      "title": "Indian Contract Act, 1872",
+      "circular_number": "",
+      "date": "",
+      "clause": "Sections 176 and 177",
+      "context": "Further, Sections 176 and 177 of the Indian Contract Act, 1872 lay down the rights of the pawnor and pawnee, respectively, and, inter alia, require the pawnee to give a reasonable notice of sale to the pawnor prior to selling the pledged assets.",
+      "found_on_pages": [
+        1,
+        2
+      ],
+      "confidence": 1.0
+    },
+    {
+      "document_type": "act",
+      "title": "Depositories Act",
+      "circular_number": "",
+      "date": "",
+      "clause": "",
+      "context": "The pledger and pledgee undertake to abide with the provisions of the Indian Contract Act, 1872, the Depositories Act, SEBI Regulations, circulars, and bye-laws in force from time to time, as may be applicable.",
+      "found_on_pages": [
+        2
+      ],
+      "confidence": 1.0
+    },
+    {
+      "document_type": "regulation",
+      "title": "SEBI Regulations",
+      "circular_number": "",
+      "date": "",
+      "clause": "",
+      "context": "The pledger and pledgee undertake to abide with the provisions of the Indian Contract Act, 1872, the Depositories Act, SEBI Regulations, circulars, and bye-laws in force from time to time, as may be applicable.",
+      "found_on_pages": [
+        2
+      ],
+      "confidence": 1.0
+    },
+    {
+      "document_type": "regulation",
+      "title": "DP Regulations",
+      "circular_number": "",
+      "date": "",
+      "clause": "Regulation 79(8)",
+      "context": "At the time of invocation of pledge, the Depositories shall send an intimation/notification to both pledger and pledgee confirming that the pledge has been invoked and the pledgee has been recorded as “beneficial owner” in terms of Regulation 79(8) of the DP Regulations.",
+      "found_on_pages": [
+        2
+      ],
+      "confidence": 1.0
+    },
+    {
+      "document_type": "act",
+      "title": "Securities and Exchange Board of India Act, 1992",
+      "circular_number": "",
+      "date": "",
+      "clause": "Section 11(1)",
+      "context": "This circular is issued in exercise of the powers conferred under Section 11(1) of the Securities and Exchange Board of India Act, 1992 read with Section 26(3) of the Depositories Act, 1996 and Regulation 97 and Regulation 79 of the Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018 to protect the interest of investors in securities and to promote development of, and to regulate securities market.",
+      "found_on_pages": [
+        3
+      ],
+      "confidence": 1.0
+    },
+    {
+      "document_type": "act",
+      "title": "Depositories Act, 1996",
+      "circular_number": "",
+      "date": "",
+      "clause": "Section 26(3)",
+      "context": "This circular is issued in exercise of the powers conferred under Section 11(1) of the Securities and Exchange Board of India Act, 1992 read with Section 26(3) of the Depositories Act, 1996 and Regulation 97 and Regulation 79 of the Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018 to protect the interest of investors in securities and to promote development of, and to regulate securities market.",
+      "found_on_pages": [
+        3
+      ],
+      "confidence": 1.0
+    },
+    {
+      "document_type": "regulation",
+      "title": "Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018",
+      "circular_number": "",
+      "date": "",
+      "clause": "Regulation 97",
+      "context": "This circular is issued in exercise of the powers conferred under Section 11(1) of the Securities and Exchange Board of India Act, 1992 read with Section 26(3) of the Depositories Act, 1996 and Regulation 97 and Regulation 79 of the Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018 to protect the interest of investors in securities and to promote development of, and to regulate securities market.",
+      "found_on_pages": [
+        3
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "graph": {
+    "nodes": 9,
+    "edges": 8
+  }
+}
