@@ -111,6 +111,7 @@ Knowledge_Graph_Agent/
 │
 ├── output/                    # Generated files (gitignored)
 ├── main.py                    # CLI entrypoint
+├── merge_graphs.py            # Merge knowledge graphs of all the circulars to give combined knowledge graph
 └── requirements.txt
 ```
 
