@@ -44,27 +44,6 @@
       <data key="d3">act</data>
       <data key="d4">False</data>
     </node>
-    <node id="Depositories Act">
-      <data key="d0">Depositories Act</data>
-      <data key="d1" />
-      <data key="d2" />
-      <data key="d3">act</data>
-      <data key="d4">False</data>
-    </node>
-    <node id="SEBI Regulations">
-      <data key="d0">SEBI Regulations</data>
-      <data key="d1" />
-      <data key="d2" />
-      <data key="d3">regulation</data>
-      <data key="d4">False</data>
-    </node>
-    <node id="DP Regulations">
-      <data key="d0">DP Regulations</data>
-      <data key="d1" />
-      <data key="d2" />
-      <data key="d3">regulation</data>
-      <data key="d4">False</data>
-    </node>
     <node id="Securities and Exchange Board of India Act, 1992">
       <data key="d0">Securities and Exchange Board of India Act, 1992</data>
       <data key="d1" />
@@ -91,21 +70,6 @@
       <data key="d5">Sections 176 and 177</data>
       <data key="d6">Further, Sections 176 and 177 of the Indian Contract Act, 1872 lay down the rights of the pawnor and pawnee, respectively, and, inter alia, require the pawnee to give a reasonable notice of sale to the pawnor prior to selling the pledged assets.</data>
       <data key="d7">[1, 2]</data>
-    </edge>
-    <edge source="HO/47/14/12(1)2026-MRD-POD2/I/4229/2026" target="Depositories Act">
-      <data key="d5" />
-      <data key="d6">The pledger and pledgee undertake to abide with the provisions of the Indian Contract Act, 1872, the Depositories Act, SEBI Regulations, circulars, and bye-laws in force from time to time, as may be applicable.</data>
-      <data key="d7">[2]</data>
-    </edge>
-    <edge source="HO/47/14/12(1)2026-MRD-POD2/I/4229/2026" target="SEBI Regulations">
-      <data key="d5" />
-      <data key="d6">The pledger and pledgee undertake to abide with the provisions of the Indian Contract Act, 1872, the Depositories Act, SEBI Regulations, circulars, and bye-laws in force from time to time, as may be applicable.</data>
-      <data key="d7">[2]</data>
-    </edge>
-    <edge source="HO/47/14/12(1)2026-MRD-POD2/I/4229/2026" target="DP Regulations">
-      <data key="d5">Regulation 79(8)</data>
-      <data key="d6">At the time of invocation of pledge, the Depositories shall send an intimation/notification to both pledger and pledgee confirming that the pledge has been invoked and the pledgee has been recorded as “beneficial owner” in terms of Regulation 79(8) of the DP Regulations.</data>
-      <data key="d7">[2]</data>
     </edge>
     <edge source="HO/47/14/12(1)2026-MRD-POD2/I/4229/2026" target="Securities and Exchange Board of India Act, 1992">
       <data key="d5">Section 11(1)</data>

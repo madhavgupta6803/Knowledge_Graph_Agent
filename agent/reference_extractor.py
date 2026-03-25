@@ -500,6 +500,28 @@ from .pdf_parser import PageContent
 
 
 # ─────────────────────────────────────────────
+# Known shorthand aliases for regulatory documents
+# ─────────────────────────────────────────────
+
+KNOWN_ALIASES: Dict[str, str] = {
+    "dp regulations":        "securities and exchange board of india (depositories and participants) regulations",
+    "sebi act":              "securities and exchange board of india act",
+    "lodr regulations":      "securities and exchange board of india (listing obligations and disclosure requirements) regulations",
+    "ncs regulations":       "securities and exchange board of india (issue and listing of non-convertible securities) regulations",
+    "mf regulations":        "securities and exchange board of india (mutual funds) regulations",
+    "depositories act":      "depositories act, 1996",
+    "companies act":         "companies act, 2013",
+    "scra":                  "securities contracts (regulation) act, 1956",
+    "indian contract act":   "indian contract act, 1872",
+}
+
+
+def _expand_alias(title: str) -> str:
+    """Expand a known shorthand title to its canonical full form."""
+    return KNOWN_ALIASES.get(title.strip().lower(), title)
+
+
+# ─────────────────────────────────────────────
 # Data model
 # ─────────────────────────────────────────────
 
@@ -514,16 +536,21 @@ class DocumentReference:
     found_on_pages: List[int] = field(default_factory=list)
     confidence: float = 1.0     # 0-1, set during evaluation
 
-    # def dedup_key(self) -> str:
-    #     """Canonical key used to merge duplicates across pages."""
-    #     return (self.circular_number or self.title).strip().lower()
-
     def dedup_key(self) -> str:
-        title_part = self.title.strip().lower()
-        # Normalize clause: strip "para ", "regulation ", "section " prefixes
+        """
+        Canonical key used to merge duplicates across pages.
+        - Expands known aliases so 'DP Regulations' merges with the full title
+        - Strips common prefixes from clauses so 'para 4.13' and '4.13' match
+        - Keys on title::clause so same doc with different clauses stays separate
+        """
+        expanded_title = _expand_alias(self.title.strip().lower())
         clause_raw = self.clause.strip().lower()
-        clause_part = re.sub(r"^(para|regulation|section|reg\.?)\s+", "", clause_raw)
-        return f"{title_part}::{clause_part}" if clause_part else title_part
+        clause_part = re.sub(
+            r"^(para|paragraph|regulation|section|reg\.?)\s+",
+            "",
+            clause_raw
+        )
+        return f"{expanded_title}::{clause_part}" if clause_part else expanded_title
 
     def to_dict(self) -> Dict:
         return asdict(self)
@@ -561,6 +588,10 @@ Rules:
 10. When a document was already referenced earlier with a full circular number,
     and is referenced again only by date or partial name, still populate
     circular_number with the full number you saw earlier on the same page.
+11. Always use the FULL formal title of a document. Do not use abbreviations or
+    shorthand names like 'DP Regulations', 'SEBI Act', 'the Act', 'the Regulations'.
+    For example: write 'Securities and Exchange Board of India (Depositories and
+    Participants) Regulations, 2018' not 'DP Regulations'.
 """
 
 PAGE_USER_PROMPT = """Page number: {page_number}
@@ -602,13 +633,15 @@ def _call_gemini(model, text: str, page_number: int) -> str:
 
 
 def _call_huggingface(client, text: str, page_number: int) -> str:
-    full_prompt = f"{SYSTEM_PROMPT}\n\n{PAGE_USER_PROMPT.format(page_number=page_number, text=text[:20000])}"
-    response = client.chat_completion(
+    full_prompt = f"{SYSTEM_PROMPT}\n\n{PAGE_USER_PROMPT.format(page_number=page_number, text=text[:5000])}"
+    response = client.chat.completions.create(
+        model="Qwen/Qwen2.5-72B-Instruct",
         messages=[{"role": "user", "content": full_prompt}],
         max_tokens=2000,
         temperature=0.1
     )
     return response.choices[0].message.content.strip()
+
 
 def _clean_circular_number(value: str) -> str:
     """Remove values that are clearly dates, not circular numbers."""
@@ -619,6 +652,7 @@ def _clean_circular_number(value: str) -> str:
     if re.match(r"^\d{1,2}\s+\w+\s+\d{4}$", value.strip()):
         return ""
     return value
+
 
 # ─────────────────────────────────────────────
 # Parsing helper
@@ -698,24 +732,50 @@ def extract_references_from_page(
 
 
 # ─────────────────────────────────────────────
-# FIX 1 — Date-based dedup fallback
+# Vague title detection
 # ─────────────────────────────────────────────
 
 def _is_vague_title(title: str) -> bool:
-    """A title is vague if it's fewer than 4 words or is a generic placeholder."""
+    """
+    A title is vague if it is fewer than 4 words or is a known generic placeholder.
+    """
     words = title.strip().split()
     if len(words) < 4:
         return True
-    generic = {"sebi circular", "the circular", "said circular", "aforesaid circular"}
-    if title.strip().lower() in generic:
-        return True
-    return False
+    generic = {
+        "sebi circular", "the circular", "said circular",
+        "aforesaid circular", "sebi regulations",
+    }
+    return title.strip().lower() in generic
 
 
-def _date_and_type_match(a: DocumentReference, b: DocumentReference) -> bool:
+def _is_too_vague(ref: "DocumentReference") -> bool:
     """
-    Last-resort dedup match: same document_type + same date + at least one vague title.
-    Catches cases like 'SEBI circular dated Jan 16' matching the full entry found earlier.
+    Drop entries that carry no useful identifying information.
+    A reference is too vague if it has a vague title AND no clause,
+    no circular_number, and no date.
+
+    Catches generic boilerplate like:
+      {"title": "SEBI Regulations", "clause": "", "circular_number": "", "date": ""}
+    which comes from text like "abide by SEBI Regulations in force" —
+    not a traceable document reference.
+    """
+    return (
+        _is_vague_title(ref.title)
+        and not ref.clause
+        and not ref.circular_number
+        and not ref.date
+    )
+
+
+# ─────────────────────────────────────────────
+# Date-based dedup fallback
+# ─────────────────────────────────────────────
+
+def _date_and_type_match(a: "DocumentReference", b: "DocumentReference") -> bool:
+    """
+    Last-resort dedup: same document_type + same date + at least one vague title.
+    Catches cases like 'SEBI circular dated Jan 16' matching the full entry.
     """
     if not a.date or not b.date:
         return False
@@ -726,8 +786,12 @@ def _date_and_type_match(a: DocumentReference, b: DocumentReference) -> bool:
     return _is_vague_title(a.title) or _is_vague_title(b.title)
 
 
+# ─────────────────────────────────────────────
+# LLM helper shared by verification passes
+# ─────────────────────────────────────────────
+
 def _call_and_parse(client, provider: str, prompt: str) -> List[Dict]:
-    """Helper: call the LLM and parse JSON response. Shared by both passes."""
+    """Call the LLM and parse JSON response. Shared by both verification passes."""
     if provider == "anthropic":
         resp = client.messages.create(
             model="claude-3-5-sonnet-20240620",
@@ -753,8 +817,9 @@ def _call_and_parse(client, provider: str, prompt: str) -> List[Dict]:
     raw = re.sub(r"```\s*$", "", raw, flags=re.MULTILINE)
     return json.loads(raw.strip()) if raw.strip() else []
 
+
 # ─────────────────────────────────────────────
-# FIX 2 — Verification pass for Master Circular clauses
+# Verification pass for Master Circular clauses
 # ─────────────────────────────────────────────
 
 def verify_master_circular_clauses(
@@ -774,7 +839,7 @@ def verify_master_circular_clauses(
         if "master circular" not in page.text.lower():
             continue
 
-        # ── Step 1: Discover which master circulars appear on this page ──
+        # Step 1: Discover which master circulars appear on this page
         discovery_prompt = (
             "Read the following page carefully.\n"
             "List every distinct Master Circular document referenced on this page.\n"
@@ -795,7 +860,7 @@ def verify_master_circular_clauses(
         if not master_circulars:
             continue
 
-        # ── Step 2: For each master circular, find all para references ──
+        # Step 2: For each master circular, find all para references
         for mc in master_circulars:
             mc_title = mc.get("title", "").strip()
             mc_date  = mc.get("date", "").strip()
@@ -830,9 +895,9 @@ def verify_master_circular_clauses(
                     continue
                 extra_refs.append({
                     "document_type": "master_circular",
-                    "title": mc_title,         # ← from discovery, not hardcoded
+                    "title": mc_title,
                     "circular_number": "",
-                    "date": mc_date,           # ← from discovery, not hardcoded
+                    "date": mc_date,
                     "clause": c.get("clause", ""),
                     "context": c.get("context", ""),
                     "page_number": page.page_number,
@@ -842,17 +907,18 @@ def verify_master_circular_clauses(
 
 
 # ─────────────────────────────────────────────
-# Deduplication (with FIX 1 applied)
+# Deduplication
 # ─────────────────────────────────────────────
 
 def deduplicate_references(raw_refs: List[Dict]) -> List[DocumentReference]:
     """
     Merge references to the same document found on multiple pages.
 
-    Three-tier matching:
-      1. Exact circular_number match (normalised)
-      2. Fuzzy title key match (existing behaviour)
-      3. Date + document_type fallback for vague titles (FIX 1)
+    Four-tier processing:
+      0. Drop entries that are too vague to be useful
+      1. Exact key match (alias-expanded title::normalised clause)
+      2. Date + document_type fallback for vague titles
+      3. Add as new entry if no match found
     """
     merged: Dict[str, DocumentReference] = {}
 
@@ -866,26 +932,31 @@ def deduplicate_references(raw_refs: List[Dict]) -> List[DocumentReference]:
             context=r.get("context", ""),
             found_on_pages=[r.get("page_number", 0)],
         )
+
+        # Tier 0: drop useless vague entries
+        if _is_too_vague(ref):
+            continue
+
         key = ref.dedup_key()
         if not key:
             continue
 
-        # Tier 1 & 2: existing key-based lookup
+        # Tier 1: exact key match
         if key in merged:
             _merge_into(merged[key], ref, r.get("page_number", 0))
             continue
 
-        # Tier 3: date + type fallback for vague titles
+        # Tier 2: date + type fallback for vague titles
         matched = False
         for existing in merged.values():
             if _date_and_type_match(existing, ref):
-                # Keep the less-vague title
                 if _is_vague_title(existing.title) and not _is_vague_title(ref.title):
                     existing.title = ref.title
                 _merge_into(existing, ref, r.get("page_number", 0))
                 matched = True
                 break
 
+        # Tier 3: new entry
         if not matched:
             merged[key] = ref
 

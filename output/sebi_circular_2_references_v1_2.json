@@ -10,7 +10,7 @@
     "total_pages": 3,
     "file_path": "sebi_circular_2.pdf"
   },
-  "total_references": 10,
+  "total_references": 8,
   "references_by_type": {
     "master_circular": [
       {
@@ -42,19 +42,7 @@
       },
       {
         "document_type": "regulation",
-        "title": "SEBI Regulations",
-        "circular_number": "",
-        "date": "",
-        "clause": "",
-        "context": "The pledger and pledgee undertake to abide with the provisions of the Indian Contract Act, 1872, the Depositories Act, SEBI Regulations, circulars, and bye-laws in force from time to time, as may be applicable.",
-        "found_on_pages": [
-          2
-        ],
-        "confidence": 1.0
-      },
-      {
-        "document_type": "regulation",
-        "title": "DP Regulations",
+        "title": "Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018",
         "circular_number": "",
         "date": "",
         "clause": "Regulation 79(8)",
@@ -99,18 +87,6 @@
         "context": "Further, Sections 176 and 177 of the Indian Contract Act, 1872 lay down the rights of the pawnor and pawnee, respectively, and, inter alia, require the pawnee to give a reasonable notice of sale to the pawnor prior to selling the pledged assets.",
         "found_on_pages": [
           1,
-          2
-        ],
-        "confidence": 1.0
-      },
-      {
-        "document_type": "act",
-        "title": "Depositories Act",
-        "circular_number": "",
-        "date": "",
-        "clause": "",
-        "context": "The pledger and pledgee undertake to abide with the provisions of the Indian Contract Act, 1872, the Depositories Act, SEBI Regulations, circulars, and bye-laws in force from time to time, as may be applicable.",
-        "found_on_pages": [
           2
         ],
         "confidence": 1.0
@@ -193,32 +169,8 @@
       "confidence": 1.0
     },
     {
-      "document_type": "act",
-      "title": "Depositories Act",
-      "circular_number": "",
-      "date": "",
-      "clause": "",
-      "context": "The pledger and pledgee undertake to abide with the provisions of the Indian Contract Act, 1872, the Depositories Act, SEBI Regulations, circulars, and bye-laws in force from time to time, as may be applicable.",
-      "found_on_pages": [
-        2
-      ],
-      "confidence": 1.0
-    },
-    {
       "document_type": "regulation",
-      "title": "SEBI Regulations",
-      "circular_number": "",
-      "date": "",
-      "clause": "",
-      "context": "The pledger and pledgee undertake to abide with the provisions of the Indian Contract Act, 1872, the Depositories Act, SEBI Regulations, circulars, and bye-laws in force from time to time, as may be applicable.",
-      "found_on_pages": [
-        2
-      ],
-      "confidence": 1.0
-    },
-    {
-      "document_type": "regulation",
-      "title": "DP Regulations",
+      "title": "Securities and Exchange Board of India (Depositories and Participants) Regulations, 2018",
       "circular_number": "",
       "date": "",
       "clause": "Regulation 79(8)",
@@ -266,7 +218,7 @@
     }
   ],
   "graph": {
-    "nodes": 9,
-    "edges": 8
+    "nodes": 6,
+    "edges": 5
   }
 }
